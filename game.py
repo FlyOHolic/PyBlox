@@ -531,21 +531,24 @@ class Enemycontainer:
                 self.spawnpos = False
                 while not self.spawnpos:
                     if self.spawnx > self.world.size[0] * 64 -1:
-                        break
+                        breaK
+                    self.newid = 0
+                    while self.newid in self.container:
+                        self.newid +=1
                     if self.world.worldgen.yvals[self.spawnx] > 4:
-                        if self.world.worldgen.yvals[self.spawnx] < self.world.worldgen.yvals[self.spawnx]:
+                        if self.world.worldgen.yvals[self.spawnx] < self.world.worldgen.yvals[self.spawnx+1]:
                             self.spawnpos = (self.spawnx *16, (self.world.worldgen.yvals[self.spawnx +1] *16)-48)
                             self.newid = 0
                             while self.newid in self.container:
                                 self.newid +=1
-                            self.container[len(self.container)] = Enemy("zombie", self.spawnpos, len(self.container), self.kill, self.world, self.player, self.game)
+                            self.container[self.newid] = Enemy("zombie", self.spawnpos, self.newid, self.kill, self.world, self.player, self.game)
                             
                         else: #self.world.worldgen.yvals[self.spawnx] > self.world.worldgen.yvals[self.spawnx]:
                             self.spawnpos = (self.spawnx *16, (self.world.worldgen.yvals[self.spawnx] *16)-48)
                             self.newid = 0
                             while self.newid in self.container:
                                 self.newid +=1
-                            self.container[len(self.container)] = Enemy("zombie", self.spawnpos, len(self.container), self.kill, self.world, self.player, self.game)
+                            self.container[self.newid] = Enemy("zombie", self.spawnpos, self.newid, self.kill, self.world, self.player, self.game)
                     else:
                         self.spawnx +=1
 
