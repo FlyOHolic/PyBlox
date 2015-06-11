@@ -1,0 +1,16 @@
+0 - standstill
+1-5 tool (195 - 135 - 75 - 45)
+6	jump
+7	1vsable
+8
+9	BACKLEGFRONT
+10	
+11	
+12	neutral
+13	1visable
+14	neutralback
+15
+16
+17	FRONTLEGFRONT
+18
+19	neutralback
